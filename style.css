@@ -4,10 +4,20 @@
     box-sizing: border-box;
 }
 
-nav {
+.contenedor {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.responsive {
     background-color: cadetblue;
     padding: 10px;
     position: relative;
+}
+
+.pc {
+    display: none;
 }
 
 .menu {
@@ -41,6 +51,7 @@ nav {
 
 i {
     color: white;
+    font-size: 30px;
 }
 
 li a {
@@ -56,4 +67,53 @@ li a {
     justify-content: flex-end;
     padding: 20px;
     font-size: 40px;
+}
+
+@media (min-width: 768px) {
+    .responsive {
+        display: none;
+    }
+    .pc {
+        display: block;
+        background-color: cadetblue;
+    }
+    .pc ul {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        border: none;
+    }
+    .pc ul li {
+        position: relative;
+        text-align: center;
+        flex: 1;
+    }
+    .pc ul li:hover {
+        transform: scale(1.1)
+    }
+    li a {
+        border: none;
+    }
+    .pc ul li ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+    }
+    .pc ul li ul li {
+        top: 110%;
+        left: 0;
+        display: block;
+        background: red;
+        display: none;
+        padding: 10px;
+        border-bottom: 1px solid white;
+    }
+    .pc ul li ul li:hover {
+        background-color: rgb(168, 5, 5);
+    }
+    .pc ul li:hover ul li {
+        display: block;
+    }
 }
