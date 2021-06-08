@@ -157,6 +157,7 @@ li a:hover {
 
 .titulo {
     font-size: 70px;
+    text-align: center;
 }
 
 .subtitulo {
@@ -215,15 +216,31 @@ li a:hover {
 .proyectos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
+    padding: 0 2rem;
 }
 
 .proyecto {
-    flex: 0 1 calc(33% - 2rem);
+    flex: 0 1 calc(80% - 2rem);
     position: relative;
     margin-bottom: 2rem;
     border-radius: 20px;
+    overflow: hidden;
+}
+
+@media (min-width: 700px) {
+    .proyectos {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .proyecto {
+        flex: 0 1 calc(33% - 2rem);
+        position: relative;
+        margin-bottom: 2rem;
+        border-radius: 20px;
+        overflow: hidden;
+    }
 }
 
 .recuadro {
@@ -233,4 +250,63 @@ li a:hover {
     height: 100%;
     top: 0;
     border-radius: 20px;
+    transform: translateX(100%);
+    transition: transform 1s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proyecto:hover .recuadro {
+    transform: translateX(0);
+}
+
+.proyecto__titulo {
+    color: white;
+    font-weight: 100;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.proyecto__titulo:hover {
+    font-size: 2.3rem;
+}
+
+.footer {
+    background-color: var(--colorterciario);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 700px) {
+    .footer {
+        background-color: var(--colorterciario);
+        color: white;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+.titulo-footer {
+    padding: 40px 0;
+    font-weight: 100;
+    color: var(--blanco);
+}
+
+.titulo-footer span {
+    font-weight: 700;
+    color: white;
+    margin-left: 5px;
+}
+
+.icono {
+    background-color: var(--colorsecundario);
+    border-radius: 50%;
+    margin-left: 2rem;
+    padding: 5px;
+    margin-bottom: 10px;
 }
